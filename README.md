@@ -83,16 +83,3 @@ streamlit run app.py
 - Highlight the exact retrieved passage on the PDF page (not just the page number)
 - Add conversation-aware retrieval (rephrase follow-up questions using chat history)
 
----
-
-### Resume bullet points
-
-- Built a retrieval-augmented generation (RAG) chatbot that answers questions over user-uploaded PDFs with page-level source citations, using LangChain, ChromaDB, and OpenAI embeddings
-- Designed a per-document vector store caching strategy that eliminates redundant re-embedding, reducing repeat-query latency and API cost
-- Implemented MMR-based retrieval to improve answer relevance and reduce context redundancy compared to naive similarity search
-
-### Recruiter talking points
-
-- **What it demonstrates:** end-to-end understanding of the RAG pattern (chunking strategy, embedding choice, vector store design, retrieval tuning, prompt grounding) — not just calling an API.
-- **Design decisions worth discussing:** why MMR over plain cosine similarity; chunk size/overlap trade-offs; why citations are shown separately from the generated answer (to keep the LLM from hallucinating page numbers).
-- **What you'd improve at scale:** swap Chroma for a managed vector DB (Pinecone/Weaviate), add async batch embedding, add eval (e.g. RAGAS) to measure answer faithfulness.
